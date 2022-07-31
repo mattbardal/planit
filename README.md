@@ -1,4 +1,7 @@
-# README
+<div align="center">
+  <img src="./app/assets/images/logo.png" width="200" alt="Planit" />
+  <h1>Planit</h1>
+</div>
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
