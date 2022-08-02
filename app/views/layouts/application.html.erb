@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html class="dark">
   <head>
     <title>Planit</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="dark:bg-gray-800 bg-gray-300 lg:grid text-slate-900 dark:text-slate-200 lg:grid-cols-[250px_50px_auto_50px]">
+    <%= render partial: "layouts/navbar" %>
+    <div class="invisible"></div>
+    <main class="mx-auto container mt-20 px-5 py-5 flex bg-white border border-gray-200 shadow-md dark:bg-gray-600 dark:border-gray-700 rounded-lg">
       <%= yield %>
     </main>
+    <div class="invisible"></div>
   </body>
 </html>
