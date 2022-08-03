@@ -2,20 +2,22 @@
   <span class="absolute text-white text-4xl top-5 left-4 cursor-pointer" onclick="open_nav()">
     <i class="bi bi-filter-left px-2 dark:bg-gray-900 bg-gray-100 dark:text-gray-100 text-gray-900 rounded-md"></i>
   </span>
-  <div class="sidebar fixed top-0 bottom-0 lg:left-0 left-[-250px] p-2 w-[250px] overflow-y-auto text-center dark:bg-gray-900 bg-gray-300 shadow h-screen">
+  <div class="sidebar fixed top-0 bottom-0 lg:left-0 left-[-250px] p-2 w-[250px] overflow-y-auto text-center dark:bg-gray-900 bg-gray-200 shadow h-screen">
     <div class="font-bold dark:text-gray-100 text-gray-900 text-xl">
       <div class="p-2.5 mt-1 flex items-center rounded-md">
         <%#<%= image_tag("logo.png", alt: "Planit", width: 150, class: "mx-auto") %>
-        <%= link_to image_tag("logo.png", alt: "Planit", width: 150), "/", class: "mx-auto" %>
+        <%= link_to image_tag("logo.png", alt: "Planit", width: 150), root_path, class: "mx-auto" %>
         <i class="bi bi-x cursor-pointer lg:hidden" onclick="open_nv()"></i>
       </div>
 
       <div>
         <% if logged_in? %>
-          <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer dark:hover:bg-gray-700 hover:bg-gray-400">
-            <i class="bi bi-house-door-fill"></i>
-            <span class="text-[15px] ml-4 dark:text-gray-200 text-gray-900">Home</span>
-          </div>
+          <%= link_to root_path, method: :get do %>
+            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer dark:hover:bg-gray-700 hover:bg-gray-400">
+              <i class="bi bi-house-door-fill"></i>
+              <span class="text-[15px] ml-4 dark:text-gray-200 text-gray-900">Home</span>
+            </div>
+          <% end %>
           <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer dark:hover:bg-gray-700 hover:bg-gray-400">
             <i class="bi bi-list-check"></i>
             <span class="text-[15px] ml-4 dark:text-gray-200 text-gray-900">To-Do</span>
@@ -33,10 +35,12 @@
             <span class="text-[15px] ml-4 dark:text-gray-200 text-gray-900">Goals</span>
           </div>
           <hr class="my-4 dark:border-gray-600 border-gray-900">
-          <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer dark:hover:bg-gray-700 hover:bg-gray-400">
-            <i class="bi bi-person-fill"></i>
-            <span class="text-[15px] ml-4 dark:text-gray-200 text-gray-900">My account</span>
-          </div>
+          <%= link_to user_path(current_user.id), method: :get do %>
+            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer dark:hover:bg-gray-700 hover:bg-gray-400">
+              <i class="bi bi-person-fill"></i>
+              <span class="text-[15px] ml-4 dark:text-gray-200 text-gray-900">My account</span>
+            </div>
+          <% end %>
           <%= link_to '/logout', method: :get do %>
             <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer dark:hover:bg-gray-700 hover:bg-gray-400">
               <i class="bi bi-box-arrow-in-left"></i>
