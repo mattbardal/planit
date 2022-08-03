@@ -1,8 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 
-const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
 export default class extends Controller {
   static targets = ["themeToggle"]
 
@@ -19,16 +16,16 @@ export default class extends Controller {
   updateIcon() {
     // Change the icons inside the button based on previous settings
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      themeToggleDarkIcon.classList.remove('hidden');
+      document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
     } else {
-      themeToggleLightIcon.classList.remove('hidden');
+      document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
     }
   }
 
   changeTheme() {
     // toggle icons inside button
-    themeToggleDarkIcon.classList.toggle('hidden');
-    themeToggleLightIcon.classList.toggle('hidden');
+    document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+    document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
 
     // if set via local storage previously
     if (localStorage.getItem('color-theme')) {
