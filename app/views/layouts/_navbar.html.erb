@@ -35,12 +35,10 @@
             <span class="text-[15px] ml-4 dark:text-gray-200 text-gray-900">Goals</span>
           </div>
           <hr class="my-4 dark:border-gray-600 border-gray-900">
-          <%= link_to user_path(current_user.id), method: :get do %>
-            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer dark:hover:bg-gray-700 hover:bg-gray-400">
-              <i class="bi bi-person-fill"></i>
-              <span class="text-[15px] ml-4 dark:text-gray-200 text-gray-900">My account</span>
-            </div>
-          <% end %>
+          <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer dark:hover:bg-gray-700 hover:bg-gray-400">
+            <i class="bi bi-person-fill"></i>
+            <span class="text-[15px] ml-4 dark:text-gray-200 text-gray-900">My account</span>
+          </div>
           <%= link_to '/logout', method: :get do %>
             <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer dark:hover:bg-gray-700 hover:bg-gray-400">
               <i class="bi bi-box-arrow-in-left"></i>
@@ -61,7 +59,7 @@
             </div>
           <% end %>
         <% end %>
-        <div data-theme-target="themeToggle" data-action="click->theme#changeTheme" class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer dark:hover:bg-gray-700 hover:bg-gray-400">
+        <div data-theme-target="themeToggle" data-action="click->theme#changeTheme" class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer dark:hover:bg-gray-700 hover:bg-gray-400">
             <i id="theme-toggle-dark-icon" class="hidden bi bi-brightness-high-fill"></i>
             <i id="theme-toggle-light-icon" class="hidden bi bi-moon-fill"></i>
             <span class="text-[15px] ml-4 dark:text-gray-200 text-gray-900">Toggle theme</span>

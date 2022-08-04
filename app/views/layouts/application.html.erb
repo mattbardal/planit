@@ -11,10 +11,10 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body class="dark:bg-gray-800 bg-gray-300 lg:grid text-slate-900 dark:text-slate-200 lg:grid-cols-[250px_50px_auto_50px]">
+  <body class="dark:bg-gray-800 bg-gray-100 lg:grid text-slate-900 dark:text-slate-200 lg:grid-cols-[250px_50px_auto_50px]">
     <%= render partial: "layouts/navbar" %>
     <div class="invisible"></div>
-    <main class="justify-center mt-20 px-5 py-5 flex bg-white border border-gray-200 shadow-md dark:bg-gray-600 dark:border-gray-700 sm:rounded-lg">
+    <main class="justify-center mt-20 px-5 py-5 flex bg-white shadow-md dark:bg-gray-900 sm:rounded-lg">
       <%= yield %>
     </main>
     <div class="invisible"></div>
